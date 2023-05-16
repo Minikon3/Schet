@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cuprum&display=swap" rel="stylesheet"> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13 практика</title>
+    <link rel="stylesheet" type="text/css" href="style2.css">
+</head>
+<body>
+    <section class="container">
+        <div>
+            <h2>Отсчёт до Кафки</h2>
+            <div class="countdown">
+                <div class="daycontainer">
+                    <h3 class="day">День не прогрузился</h3>
+                    <h3>Дней</h3>
+                </div>
+                <div class="hourcontainer">
+                    <h3 class="hour">Часы не прогрузились</h3>
+                    <h3>Часов</h3>
+                </div>
+                <div class="minutecontainer">
+                    <h3 class="minute">Минуты не прогрузились</h3>
+                    <h3>Минут</h3>
+                </div>
+                <div class="secondcontainer">
+                    <h3 class="second">Секунды не прогрузились</h3>
+                    <h3>Секунд</h3>
+                </div>
+            </div>
+        </div>
+        <img class="imgcont" src="kafka.gif" alt="Картинка">
+    </section>
+    <script>
+        const countdown=()=>{
+            const countDate=new Date('July 18, 2023 20:00:00').getTime();
+            const now=new Date().getTime();
+            const gap=countDate-now;
+            const second=1000;
+            const minute=second*60;
+            const hour=minute*60;
+            const day=hour*24;
+            const textDate=Math.floor(gap/day);
+            const textHour=Math.floor((gap%day)/hour);
+            const textMinute=Math.floor((gap%hour)/minute);
+            const textSecond=Math.floor((gap%minute)/second);
+            document.querySelector('.day').innerText=textDate;
+            document.querySelector('.hour').innerText=textHour;
+            document.querySelector('.minute').innerText=textMinute;
+            document.querySelector('.second').innerText=textSecond;
+        };
+        setInterval(countdown,1000);
+    </script>
+</body>
+</html>
