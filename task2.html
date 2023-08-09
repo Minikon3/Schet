@@ -14,6 +14,7 @@
     <section class="container">
         <div>
             <h2>Отсчёт до Кафки</h2>
+            <h1>Отсчёт правилен, только по GMT+3</h1>
             <div class="countdown">
                 <div class="daycontainer">
                     <h3 class="day">День не прогрузился</h3>
@@ -37,7 +38,7 @@
     </section>
     <script>
         const countdown=()=>{
-            const countDate=new Date('August 9, 2023 20:00:00').getTime();
+            const countDate=new Date('August 9, 2023 14:00:00').getTime();
             const now=new Date().getTime();
             const gap=countDate-now;
             const second=1000;
